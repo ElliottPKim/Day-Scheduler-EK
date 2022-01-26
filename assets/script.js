@@ -8,15 +8,19 @@ function timeBlockColor() {
     $(".time-block").each(function() {
         var currentHours = parseInt($(this).attr("id"));
 
+        console.log(this)
+
         if (currentHours < time) {
             $(this).addClass("past");
-        } else if (currHour === hour) {
+        } else if (currentHours === time) {
             $(this).addClass("present");
         } else {
             $(this).addClass("future");
         }
     })
 };
+
+timeBlockColor();
 
 // saves to local storage
 $(".saveBtn").on("click", function() {
